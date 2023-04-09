@@ -4,32 +4,59 @@
 #include <iostream>
 #include <vector>
 
-enum EnumPower
+enum class GameState
 {
-	Off = 4,
-	On = 5
-};
-enum class EnumClassPower
-{
-	Off,
-	On
+	Menu,
+	Playing,
+	Pause,
+	GameOver
 };
 
 int main()
 {
-	EnumClassPower lightPower{ EnumClassPower::On };
+	//GameState gameState{ GameState::Menu };
+	//switch (gameState)
+	//{
+	//	case GameState::Menu:
+	//		// show menu screem
+	//		// load player profile
+	//		break;
+	//	case GameState::Playing:
+	//		// create players
+	//		break;
+	//	case GameState::Pause:
+	//		// stop playing
+	//		break;
+	//	case GameState::GameOver:
+	//		// display game over screen
+	//		break;
+	//		
+	//	default:
+	//		// show menu screen
+	//		break;
+	//}
 
-	if (lightPower == EnumClassPower::On)
+	int input = -1;
+
+	while (input != 9)
 	{
-		std::cout << "Power is on" << std::endl;
-	}
-	else if (lightPower == EnumClassPower::Off)
-	{
-		std::cout << "Power is off" << std::endl;
-	}
-	else
-	{
-		std::cout << "Something went wrong" << std::endl;
+		std::cout << "Please enter a number" << std::endl;
+		std::cin >> input;
+
+		switch (input)
+		{
+		case 0:
+			std::cout << "You have nothing" << std::endl;
+			break;
+		case 1:
+			std::cout << "You have only 1" << std::endl;
+			break;
+		case 9:
+			std::cout << "You have excited" << std::endl;
+		default:
+			std::cout << "You shouldn't be here" << std::endl;
+			break;
+		}
 	}
 
 }
