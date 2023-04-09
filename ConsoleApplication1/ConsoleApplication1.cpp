@@ -5,7 +5,7 @@
 
 class AudioTrack
 {
-	// a
+	// represent audio track
 };
 
 void analyzeTrack(AudioTrack* track)
@@ -20,25 +20,15 @@ void analyzeTrack(AudioTrack* track)
 
 int main()
 {
-	AudioTrack track;
-	analyzeTrack(&track);
+	// user chooses a song
+	// AudioTrack* track = new AudioTrack; old school way, this means creating a ponter which is dedicated to Audiotrack, but not the instance
 
-	/*while (num < 100)
-	{
-		num++;
-		std::cout << num << std::endl;
-	}*/
+	std::unique_ptr<AudioTrack> track;
+	track = std::make_unique<AudioTrack>();
+	//auto track = std::make_unique<AudioTrack>(); another way to define unique pointer
 
-	/*do
-	{
-		num++;
-		std::cout << num << std::endl;
-	} while (num < 100);*/
+	analyzeTrack(track.get());
 
-	/*for (int i = 0; i < 100; i++)
-	{
-		std::cout << i << std::endl;
-	}*/
 
 }
 
