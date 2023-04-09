@@ -4,50 +4,32 @@
 #include <iostream>
 #include <vector>
 
-void addOne(std::vector<int>& vec)
+enum EnumPower
 {
-	for (int i = 0; i < vec.size(); i++)
-	{
-		vec[i]++;
-		std::cout << vec[i] << std::endl;
-	}
-}
+	Off = 4,
+	On = 5
+};
+enum class EnumClassPower
+{
+	Off,
+	On
+};
 
 int main()
 {
-	//std::vector<int> myVec { 5, 3 ,7 };
-	//int myInt{ 5 };
-	//for (int i = 0; i < myVec.size(); i++)
-	//{
-	//	myVec[i] = myInt++; //5 ,6, 7 ;  ++myInt -> 6, 7, 8
-	//}
-	//for (int j = 0; j < myVec.size(); j++)
-	//{
-	//	std::cout << myVec[j] << std::endl;
-	//}
+	EnumClassPower lightPower{ EnumClassPower::On };
 
-	//std::vector<int> myVec;
-	//myVec.push_back(3);
-	//myVec.push_back(6);
-	//myVec.push_back(9);
-
-	//addOne(myVec);
-
-	//for (int i = 0; i < myVec.size(); i++)
-	//{
-	//	std::cout << myVec[i] << std::endl;
-	//}
-
-	std::vector<std::vector<int>> myVec;
-	myVec.push_back(std::vector<int> { 3, 4, 5 });
-	myVec.push_back(std::vector<int> { 5, 10 ,15, 7 });
-
-	for (int i = 0; i < myVec.size(); i++)
+	if (lightPower == EnumClassPower::On)
 	{
-		for (int j = 0; j < myVec[i].size(); j++)
-		{
-			std::cout << myVec[i][j] << std::endl;
-		}
+		std::cout << "Power is on" << std::endl;
+	}
+	else if (lightPower == EnumClassPower::Off)
+	{
+		std::cout << "Power is off" << std::endl;
+	}
+	else
+	{
+		std::cout << "Something went wrong" << std::endl;
 	}
 
 }
