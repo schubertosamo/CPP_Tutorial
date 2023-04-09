@@ -2,33 +2,53 @@
 //
 
 #include <iostream>
+#include <vector>
 
-class AudioTrack
+void addOne(std::vector<int>& vec)
 {
-	// represent audio track
-};
-
-void analyzeTrack(AudioTrack* track)
-{
-	if (track)
+	for (int i = 0; i < vec.size(); i++)
 	{
-		// something track
+		vec[i]++;
+		std::cout << vec[i] << std::endl;
 	}
-
-};
-
+}
 
 int main()
 {
-	// user chooses a song
-	// AudioTrack* track = new AudioTrack; old school way, this means creating a ponter which is dedicated to Audiotrack, but not the instance
+	//std::vector<int> myVec { 5, 3 ,7 };
+	//int myInt{ 5 };
+	//for (int i = 0; i < myVec.size(); i++)
+	//{
+	//	myVec[i] = myInt++; //5 ,6, 7 ;  ++myInt -> 6, 7, 8
+	//}
+	//for (int j = 0; j < myVec.size(); j++)
+	//{
+	//	std::cout << myVec[j] << std::endl;
+	//}
 
-	std::unique_ptr<AudioTrack> track;
-	track = std::make_unique<AudioTrack>();
-	//auto track = std::make_unique<AudioTrack>(); another way to define unique pointer
+	//std::vector<int> myVec;
+	//myVec.push_back(3);
+	//myVec.push_back(6);
+	//myVec.push_back(9);
 
-	analyzeTrack(track.get());
+	//addOne(myVec);
 
+	//for (int i = 0; i < myVec.size(); i++)
+	//{
+	//	std::cout << myVec[i] << std::endl;
+	//}
+
+	std::vector<std::vector<int>> myVec;
+	myVec.push_back(std::vector<int> { 3, 4, 5 });
+	myVec.push_back(std::vector<int> { 5, 10 ,15, 7 });
+
+	for (int i = 0; i < myVec.size(); i++)
+	{
+		for (int j = 0; j < myVec[i].size(); j++)
+		{
+			std::cout << myVec[i][j] << std::endl;
+		}
+	}
 
 }
 
