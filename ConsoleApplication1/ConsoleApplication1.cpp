@@ -22,7 +22,7 @@ public:
 private:
 	PowerType type { PowerType::Electric };
 	std::string name = "Car";
-	std::string password = "ojiojiojiojis"
+	std::string password = "ojiojiojiojis";
 };
 
 class CarPark
